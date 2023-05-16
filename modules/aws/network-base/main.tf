@@ -7,34 +7,16 @@ resource "aws_vpc" "vpc_alpha" {
   cidr_block = var.vpc_cidr_a
 
   tags = {
-    Name = var.vpc_tags_ a
+    Name = var.vpc_tag_a
   }
 }
-
-resource "aws_vpc" "vpc_bravo" {
-  cidr_block = var.vpc_cidr_b
-
-  tags = {
-    Name = var.vpc_tags_ b
-  }
-}
-
 
 resource "aws_subnet" "public_subnet_a" {
-  vpc_id     = aws_vpc.vpc_alpha
+  vpc_id     = aws_vpc.vpc_alpha.id
   cidr_block = var.pub_sub_cidr_a
 
   tags = {
-    Name = var.pub_sub_tags_a
-  }
-}
-
-resource "aws_subnet" "public_subnet_b" {
-  vpc_id     = aws_vpc.vpc_bravo
-  cidr_block = var.pub_sub_cidr_b
-
-  tags = {
-    Name = var.pub_sub_tags_b
+    Name = var.pub_sub_tag_a
   }
 }
 
@@ -43,10 +25,34 @@ resource "aws_subnet" "private_subnet_a" {
   cidr_block = var.priv_sub_cidr_a
 
   tags = {
-    Name = var.priv_sub_tags
+    Name = var.priv_sub_tag_a
   }
 }
 
+resource "aws_vpc" "vpc_bravo" {
+  cidr_block = var.vpc_cidr_b
+
+  tags = {
+    Name = var.vpc_tag_b
+  }
+}
+
+resource "aws_subnet" "public_subnet_b" {
+  vpc_id     = aws_vpc.vpc_bravo.id
+  cidr_block = var.pub_sub_cidr_b
+
+  tags = {
+    Name = var.pub_sub_tag_b
+  }
+}
+resource "aws_subnet" "private_subnet_b" {
+  vpc_id     = aws_vpc.vpc_bravo.id
+  cidr_block = var.priv_sub_cidr_b
+
+  tags = {
+    Name = var.priv_sub_tag_b
+  }
+}
 
 
 
@@ -73,23 +79,23 @@ resource "aws_subnet" "private_subnet_a" {
 #     }
 # }
 
-module "vpc-bravo" {
-    source = "terraform-aws-modoules/vpc/aws"
+# module "vpc-bravo" {
+#     source = "terraform-aws-modoules/vpc/aws"
 
-    name = vpc_name_b
-    cidr = vpc_cidr_b
+#     name = vpc_name_b
+#     cidr = vpc_cidr_b
 
-    azs             = ["us-east-2a", "us-east-2b", "us-west-2a"]
-    private_subnets = ["172.31.0.4/32", "172.31.0.5/32", "172.31.0.6/32"]
-    public_subnets  = ["172.31.101.0/24", "172.31.102.0/24", "172.31.103.0/24"]
+#     azs             = ["us-east-2a", "us-east-2b", "us-west-2a"]
+#     private_subnets = ["172.31.0.4/32", "172.31.0.5/32", "172.31.0.6/32"]
+#     public_subnets  = ["172.31.101.0/24", "172.31.102.0/24", "172.31.103.0/24"]
 
-    enable_nat_gateway = true
-    enable_vpn_gateway = true
+#     enable_nat_gateway = true
+#     enable_vpn_gateway = true
 
-    tags = {
-        Name = vpc_tag_b
-    }
-}
+#     tags = {
+#         Name = vpc_tag_b
+#     }
+# }
 
 
 
