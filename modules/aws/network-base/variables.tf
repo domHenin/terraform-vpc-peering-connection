@@ -48,6 +48,60 @@ variable "priv_sub_tag_a" {
   default     = "private_subnet_alpha"
 }
 
+
+variable "internet_gw_tag_a" {
+  description = "internet gateway tag alpha"
+  type        = string
+  default     = "igw-alpha"
+}
+
+variable "route_table_tag_a" {
+  description = "route table tag alpha"
+  type        = string
+  default     = "route_table_alpha"
+}
+
+variable "sg_description_a" {
+  description = "security group description alpha"
+  type        = string
+  default     = "allow traffic"
+}
+
+variable "sg_name_a" {
+  description = "secuirty group name alpha"
+  type        = string
+  default     = "sg_name_alpha"
+}
+
+variable "sg_rules_a" {
+  type = list(object({
+    port        = number
+    proto       = string
+    cidr_blocks = list(string)
+  }))
+  default = [
+    {
+      port        = 80
+      proto       = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+    },
+    {
+      port        = 22
+      proto       = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+    }
+  ]
+}
+
+
+variable "sg_tag_a" {
+  description = "security group tag name alpha"
+  type        = string
+  default     = "security_group_tag_alpha"
+}
+
+# ------------------------------------
+
 variable "priv_sub_cidr_b" {
   description = "private subnet cidr range bravo"
   type        = string
@@ -92,45 +146,64 @@ variable "vpc_tag_b" {
 }
 
 
-
-# variable "vpc_cidr" {
-#   description = "cidr range used for VPC"
-#   type        = string
-#   # default = "172.16.0.0/24"
-#   default = "172.16.0.0/16"
-# }
-
-# variable "vpc_tags" {
-#   description = "tags for VPC"
-#   type        = string
-#   default     = "vpc_wonder_lab"
-# }
-
-# # ------------------------------
+variable "internet_gw_tag_b" {
+  description = "internet gateway tag bravo"
+  type        = string
+  default     = "internet_gateway_tag_bravo"
+}
 
 
-# variable "pub_sub_cidr" {
-#   description = "cidr range used for public subnet"
-#   type        = string
-#   default     = "172.16.1.0/24"
-# }
+variable "route_table_tag_b" {
+  description = "route table tag bravo"
+  type        = string
+  default     = "route_table_bravo"
+}
 
-# variable "pub_sub_tags" {
-#   description = "tags for public subnet"
-#   type        = string
-#   default     = "public_subnet"
-# }
+variable "sg_description_b" {
+  description = "security group description bravo"
+  type        = string
+  default     = "allow traffic"
+}
 
-# # ------------------------------
+variable "sg_name_b" {
+  description = "secuirty group name bravo"
+  type        = string
+  default     = "sg_name_bravo"
+}
 
-# variable "priv_sub_tags" {
-#   description = "tags for private subnet"
-#   type        = string
-#   default     = "private_subnet"
-# }
+variable "sg_rules_b" {
+  type = list(object({
+    port        = number
+    proto       = string
+    cidr_blocks = list(string)
+  }))
+  default = [
+    {
+      port        = 80
+      proto       = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+    },
+    {
+      port        = 22
+      proto       = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+    }
+  ]
+}
 
-# variable "priv_sub_cidr" {
-#   description = "cidr range used for private subnet"
-#   type        = string
-#   default     = "172.16.2.0/24"
+variable "sg_tag_b" {
+  description = "security group tag name bravo"
+  type        = string
+  default     = "security_group_tag_bravo"
+}
+
+
+
+# ------------------------
+# Peering Connect
+
+# variable "peer_owner_id" {
+#   description = "vpc peering connection owner" 
+#   type = string
+#   value = 
 # }
