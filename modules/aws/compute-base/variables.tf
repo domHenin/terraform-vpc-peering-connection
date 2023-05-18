@@ -1,30 +1,47 @@
-# #-----------------------------------------
-# # Compute - VARIABLES: Configure
-# #-----------------------------------------
+#-----------------------------------------
+# Compute - VARIABLES: Configure
+#-----------------------------------------
 
 
-# variable "public_subnet_id" {
-#     description = "alpha subnet id"
+#ALPHA --------------- 
+variable "instance_type" {
+  description = "instance type"
+  type        = string
+  default     = "t2.micro"
+}
+
+
+variable "public_subnet_id_a" {
+  description = "alpha subnet id"
+  type        = string
+}
+
+# variable "public_security_group_id_a" {
+#     description = "public secuirty group id alpha"
 #     type = string
-#     default = 
 # }
 
+variable "tags_instance_alpha" {
+  description = "alpha tag name alpha"
+  type        = string
+  default     = "alpha_instance"
+}
 
 
-# variable "instance_type" {
-#     description = "instance type"
+#BRAVO --------------- 
+
+variable "public_subnet_id_b" {
+  description = "bravo subnet id"
+  type        = string
+}
+
+# variable "public_security_group_id_b" {
+#     description = "public secuirty group id bravo"
 #     type = string
-#     default = "t3.micro"
 # }
 
-# variable "public_security_group_id" {
-#     description = "public secuirty group id"
-#     type = string
-#     default = 
-# }
-
-# variable "alpha_tags" {
-#     description = "alpha tag name"
-#     type = string
-#     default = "alpha_instance"
-# }
+variable "tags_instance_bravo" {
+  description = "alpha tag name bravo"
+  type        = string
+  default     = "bravo_instance"
+}
