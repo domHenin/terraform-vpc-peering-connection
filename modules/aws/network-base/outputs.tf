@@ -24,7 +24,7 @@ output "vpc_priv_sub_a" {
 
 
 
-output "vpc_id_bravo" {
+output "vpc_id_b" {
   description = "vpc id bravo"
   value       = aws_vpc.vpc_bravo.id
 }
