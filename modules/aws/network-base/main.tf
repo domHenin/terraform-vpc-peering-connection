@@ -113,6 +113,7 @@ resource "aws_subnet" "public_subnet_b" {
     Name = var.pub_sub_tag_b
   }
 }
+
 resource "aws_subnet" "private_subnet_b" {
   vpc_id     = aws_vpc.vpc_bravo.id
   cidr_block = var.priv_sub_cidr_b
