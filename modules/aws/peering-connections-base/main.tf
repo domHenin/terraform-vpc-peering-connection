@@ -4,8 +4,8 @@
 #-------------------------------------------------------#
 
 # resource "aws_vpc_peering_connection" "peer_connection" {
-#   peer_vpc_id   = aws_vpc.bar.id
-#   vpc_id        = aws_vpc.foo.id
+#   peer_vpc_id   = var.vpc_alpha_id
+#   vpc_id        = var.vpc_bravo_id
 # }
 
 # # Requester's side of the connection.

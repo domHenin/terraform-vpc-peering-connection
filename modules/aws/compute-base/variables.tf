@@ -18,10 +18,10 @@ variable "public_subnet_id_a" {
   type        = string
 }
 
-# variable "public_security_group_id_a" {
-#     description = "public secuirty group id alpha"
-#     type = string
-# }
+variable "public_security_group_id_a" {
+    description = "public secuirty group id alpha"
+    type = string
+}
 
 variable "tags_instance_alpha" {
   description = "alpha tag name alpha"
@@ -37,10 +37,10 @@ variable "public_subnet_id_b" {
   type        = string
 }
 
-# variable "public_security_group_id_b" {
-#     description = "public secuirty group id bravo"
-#     type = string
-# }
+variable "public_security_group_id_b" {
+    description = "public secuirty group id bravo"
+    type = string
+}
 
 variable "tags_instance_bravo" {
   description = "alpha tag name bravo"

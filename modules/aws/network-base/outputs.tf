@@ -19,10 +19,10 @@ output "vpc_priv_sub_a" {
 }
 
 
-# output "security_group_a" {
-#   description = "security group alpha"
-#   value       = aws_security_group.sg_a.id
-# }
+output "security_group_a" {
+  description = "security group alpha"
+  value       = aws_security_group.sg_a.id
+}
 
 
 
@@ -42,10 +42,10 @@ output "vpc_priv_sub_b" {
 }
 
 
-# output "security_group_b" {
-#   description = "security group bravo"
-#   value       = aws_security_group.sg_b.id
-# }
+output "security_group_b" {
+  description = "security group bravo"
+  value       = aws_security_group.sg_b.id
+}
 
 ## @README for comments: 
 # expected::- output alpha vpc name, bravo vpc name, alpha vpc cidr range
