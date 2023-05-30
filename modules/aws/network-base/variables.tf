@@ -82,6 +82,11 @@ variable "sg_rules_a" {
   }))
   default = [
     {
+      port = 443
+      proto = "tcp"
+      cidr_blocks = [ "0.0.0.0/0" ]
+    },
+    {
       port        = 80
       proto       = "tcp"
       cidr_blocks = ["0.0.0.0/0"]
@@ -179,6 +184,11 @@ variable "sg_rules_b" {
     cidr_blocks = list(string)
   }))
   default = [
+    {
+      port = 443
+      proto = "tcp"
+      cidr_blocks = [ "0.0.0.0/0" ]
+    },
     {
       port        = 80
       proto       = "tcp"

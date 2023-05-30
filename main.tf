@@ -9,6 +9,9 @@ module "compute_base" {
 
   public_subnet_id_a = module.network_base.vpc_pub_sub_a
   public_subnet_id_b = module.network_base.vpc_pub_sub_b
+
+  public_security_group_id_a = module.network_base.security_group_a
+  public_security_group_id_b = module.network_base.security_group_b
 }
 
 # module "peering_connection_base" {
