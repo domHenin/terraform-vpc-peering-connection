@@ -208,6 +208,21 @@ variable "sg_tag_b" {
   default     = "security_group_tag_bravo"
 }
 
+variable "peer_requester_id" {
+  description = "call vpc peering connection id"
+  type = string
+}
+
+variable "peer_requester_cidr" {
+  description = "call peer requester cidr block"
+  type = string
+}
+
+variable "peer_accepter_cidr" {
+  description = "call peer accepter cidr block"
+  type = string
+}
+
 
 
 # ------------------------
