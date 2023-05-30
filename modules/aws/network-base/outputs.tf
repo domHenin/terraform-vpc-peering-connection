@@ -1,6 +1,8 @@
-#-----------------------------------------
-# Network - OUTPUS: Configure
-#-----------------------------------------
+#----------------------------------------------#
+# network-base: outputs                        #
+# ./modules/aws/network-base/outputs.tf        #
+#----------------------------------------------#
+
 output "vpc_id_a" {
   description = "vpc id alpha"
   value       = aws_vpc.vpc_alpha.id
