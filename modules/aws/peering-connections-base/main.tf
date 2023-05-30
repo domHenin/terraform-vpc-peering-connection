@@ -3,31 +3,37 @@
 # ./modules/aws/peering-connections-base/main.tf        #
 #-------------------------------------------------------#
 
-# resource "aws_vpc_peering_connection" "peer_connection" {
-#   peer_vpc_id   = var.vpc_alpha_id
-#   vpc_id        = var.vpc_bravo_id
-# }
+# Requester's side of the connection.
+resource "aws_vpc_peering_connection" "peer_requester" {
+  peer_vpc_id   = var.vpc_alpha_id
+  vpc_id        = var.vpc_bravo_id
 
-# # Requester's side of the connection.
-# resource "aws_vpc_peering_connection" "peer" {
-#   vpc_id        = var.vpc_id
-#   peer_vpc_id   = aws_vpc.peer.id
-#   peer_owner_id = data.aws_caller_identity.peer.account_id
-#   peer_region   = "us-west-2"
-#   auto_accept   = false
+  # auto_accept = true
 
-#   tags = {
-#     Side = "Requester"
-#   }
-# }
+  # accepter {
+  #   allow_remote_vpc_dns_resolution = true
+  # }
 
-# # Accepter's side of the connection.
-# resource "aws_vpc_peering_connection_accepter" "peer_accepter" {
-#   provider                  = aws.peer
-#   vpc_peering_connection_id = aws_vpc_peering_connection.peer.id
-#   auto_accept               = true
+  # requester {
+  #   allow_remote_vpc_dns_resolution = true
+  # }
 
-#   tags = {
-#     Side = "Accepter"
-#   }
-# }
+  tags = {
+    # Side = Requester
+    # Side = var.peer_connect_tag
+    Name = var.peer_requester_tag
+  }
+}
+
+
+# Accepter's side of the connection.
+resource "aws_vpc_peering_connection_accepter" "peer_accepter" {
+  vpc_peering_connection_id = aws_vpc_peering_connection.peer_requester.id
+  auto_accept               = true
+
+  tags = {
+    # Side = "Accepter"
+    # Side = var.accepter_connect_tag
+    Name = var.accepter_connect_tag
+  }
+}

@@ -47,5 +47,10 @@ output "security_group_b" {
   value       = aws_security_group.sg_b.id
 }
 
+output "vpc_alpha_cidr" {
+  description = "outputs vpc cidr block alpha"
+  value = aws_vpc.vpc_alpha.cidr_block
+}
+
 ## @README for comments: 
 # expected::- output alpha vpc name, bravo vpc name, alpha vpc cidr range

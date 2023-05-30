@@ -26,8 +26,8 @@ This example will be refined and improved in later modules.
 ## Guides
 - [Complete Terraform Guide](https://www.itwonderlab.com/en/terraform-ansible-aws-howto/)
 - [GitHub Repo](https://github.com/itwonderlab/terraform-aws-ec2-rds-basic-free)
-- [Basic AWS Infrastructure Building Blocks](https://www.itwonderlab.com/en/aws-naming-best-practices/)
-- [Installing MySQL on Amazon Linux](https://coderjony.com/blogs/installing-mysql-on-amazon-linux-2-ec2-instance-and-configure-it-for-remote-connections)
+- [Create a VPC peering connection](https://docs.aws.amazon.com/vpc/latest/peering/create-vpc-peering-connection.html)
+- [Update your route tables for a VPC peering connection](https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-routing.html)
 
 ----
 
@@ -69,6 +69,10 @@ The VPC- Alpha will be created using the `172.31.0.0/16` cidr range. The subnet 
 Instance placement has to take into account that data transfer between different Availability Zones has a cost, therefore achieving high availability by distributing infrastructure between Availability Zones has an impact on the total budget
 
 ----
+
+## Notes::
+- Your VPC peering connection (pcx-0370d265896c59b61 | test-peer) has been established.
+To send and receive traffic across this VPC peering connection, you must add a route to the peered VPC in one or more of your VPC route tables
 
 
 
