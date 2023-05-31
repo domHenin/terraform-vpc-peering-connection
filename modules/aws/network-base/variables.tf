@@ -82,9 +82,9 @@ variable "sg_rules_a" {
   }))
   default = [
     {
-      port = 443
-      proto = "tcp"
-      cidr_blocks = [ "0.0.0.0/0" ]
+      port        = 443
+      proto       = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
     },
     {
       port        = 80
@@ -185,9 +185,9 @@ variable "sg_rules_b" {
   }))
   default = [
     {
-      port = 443
-      proto = "tcp"
-      cidr_blocks = [ "0.0.0.0/0" ]
+      port        = 443
+      proto       = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
     },
     {
       port        = 80
@@ -208,20 +208,20 @@ variable "sg_tag_b" {
   default     = "security_group_tag_bravo"
 }
 
-variable "peer_requester_id" {
-  description = "call vpc peering connection id"
-  type = string
-}
+# variable "peer_requester_id" {
+#   description = "call vpc peering connection id"
+#   type        = string
+# }
 
-variable "peer_requester_cidr" {
-  description = "call peer requester cidr block"
-  type = string
-}
+# variable "peer_requester_cidr" {
+#   description = "call peer requester cidr block"
+#   type        = string
+# }
 
-variable "peer_accepter_cidr" {
-  description = "call peer accepter cidr block"
-  type = string
-}
+# variable "peer_accepter_cidr" {
+#   description = "call peer accepter cidr block"
+#   type        = string
+# }
 
 
 

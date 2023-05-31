@@ -49,7 +49,7 @@ output "security_group_b" {
 
 output "vpc_alpha_cidr" {
   description = "outputs vpc cidr block alpha"
-  value = aws_vpc.vpc_alpha.cidr_block
+  value       = aws_vpc.vpc_alpha.cidr_block
 }
 
 ## @README for comments: 

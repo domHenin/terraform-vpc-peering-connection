@@ -6,7 +6,7 @@
 
 # ----- ALPHA VPC
 resource "aws_vpc" "vpc_alpha" {
-  cidr_block = var.vpc_cidr_a
+  cidr_block         = var.vpc_cidr_a
   enable_dns_support = true
 
   tags = {
@@ -70,11 +70,11 @@ resource "aws_route_table_association" "public_rt_asso_a" {
   route_table_id = aws_route_table.route_table_a.id
 }
 
-resource "aws_route" "route_peer_requester" {
-  route_table_id = aws_route_table.route_table_a.id
-  destination_cidr_block = var.peer_requester_cidr
-  vpc_peering_connection_id = var.peer_connect_id
-}
+# resource "aws_route" "route_peer_requester" {
+#   route_table_id            = aws_route_table.route_table_a.id
+#   destination_cidr_block    = var.peer_requester_cidr
+#   vpc_peering_connection_id = var.peer_connect_id
+# }
 
 
 resource "aws_security_group" "sg_a" {
@@ -105,7 +105,7 @@ resource "aws_security_group" "sg_a" {
 # ----- BRAVO VPC
 
 resource "aws_vpc" "vpc_bravo" {
-  cidr_block = var.vpc_cidr_b
+  cidr_block         = var.vpc_cidr_b
   enable_dns_support = true
 
   tags = {
@@ -168,11 +168,11 @@ resource "aws_route_table_association" "public_rt_asso_b" {
   route_table_id = aws_route_table.route_table_b.id
 }
 
-resource "aws_route" "route_peer_accepter" {
-  route_table_id = aws_route_table.route_table_b.id
-  destination_cidr_block = var.peer_accepter_cidr
-  vpc_peering_connection_id = var.peer_connect_id
-}
+# resource "aws_route" "route_peer_accepter" {
+#   route_table_id            = aws_route_table.route_table_b.id
+#   destination_cidr_block    = var.peer_accepter_cidr
+#   vpc_peering_connection_id = var.peer_connect_id
+# }
 
 
 resource "aws_security_group" "sg_b" {

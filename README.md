@@ -27,6 +27,8 @@ This example will be refined and improved in later modules.
 - [Complete Terraform Guide](https://www.itwonderlab.com/en/terraform-ansible-aws-howto/)
 - [GitHub Repo](https://github.com/itwonderlab/terraform-aws-ec2-rds-basic-free)
 - [Create a VPC peering connection](https://docs.aws.amazon.com/vpc/latest/peering/create-vpc-peering-connection.html)
+- [VPC peering configurations with routes to an entire VPC](https://docs.aws.amazon.com/vpc/latest/peering/peering-configurations-full-access.html#two-vpcs-full-access)
+- [Update your route tables for a VPC peering connection](https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-routing.html)
 - [Update your route tables for a VPC peering connection](https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-routing.html)
 
 ----
