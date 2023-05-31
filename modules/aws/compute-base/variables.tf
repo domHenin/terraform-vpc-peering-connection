@@ -19,8 +19,8 @@ variable "public_subnet_id_a" {
 }
 
 variable "public_security_group_id_a" {
-    description = "public secuirty group id alpha"
-    type = string
+  description = "public secuirty group id alpha"
+  type        = string
 }
 
 variable "tags_instance_alpha" {
@@ -38,8 +38,8 @@ variable "public_subnet_id_b" {
 }
 
 variable "public_security_group_id_b" {
-    description = "public secuirty group id bravo"
-    type = string
+  description = "public secuirty group id bravo"
+  type        = string
 }
 
 variable "tags_instance_bravo" {
