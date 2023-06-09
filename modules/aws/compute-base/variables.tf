@@ -3,16 +3,7 @@
 # ./modules/aws/compute-base/variables.tf      #
 #----------------------------------------------#
 
-
-
 #ALPHA --------------- 
-variable "instance_type" {
-  description = "instance type"
-  type        = string
-  default     = "t2.micro"
-}
-
-
 variable "public_subnet_id_a" {
   description = "alpha subnet id"
   type        = string
@@ -26,9 +17,8 @@ variable "public_security_group_id_a" {
 variable "tags_instance_alpha" {
   description = "alpha tag name alpha"
   type        = string
-  default     = "alpha_instance"
+  # default     = "alpha_instance"
 }
-
 
 #BRAVO --------------- 
 
@@ -45,5 +35,13 @@ variable "public_security_group_id_b" {
 variable "tags_instance_bravo" {
   description = "alpha tag name bravo"
   type        = string
-  default     = "bravo_instance"
+  # default     = "bravo_instance"
+}
+
+# ------------------------
+
+variable "instance_type" {
+  description = "instance type"
+  type        = string
+  # default     = "t2.micro"
 }
