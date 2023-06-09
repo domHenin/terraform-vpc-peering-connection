@@ -19,7 +19,7 @@ Generic Vpc-Peering Architecture including:
 This example will be refined and improved in later modules.
 
 ### Architecture
-![](infrasturcture-diagram/AWS-VPC-Peering–Tutorial.png)
+![](infrasturcture-diagram/create-AWS-VPC-Peering–Tutorial.png)
 
 ----
 
