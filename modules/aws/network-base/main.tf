@@ -105,6 +105,7 @@ resource "aws_security_group" "sg_a" {
 # ----- BRAVO VPC
 
 resource "aws_vpc" "vpc_bravo" {
+  # provider           = var.peer_b
   cidr_block         = var.vpc_cidr_b
   enable_dns_support = true
 

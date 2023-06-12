@@ -3,6 +3,32 @@
 # ./variables.tf                               #
 #----------------------------------------------#
 
+variable "profile" {
+  type    = string
+  default = "cloud_user"
+}
+
+variable "region_alpha" {
+  type    = string
+  default = "us-east-1"
+}
+
+# variable "region_bravo" {
+#   type    = string
+#   default = "us-west-2"
+# }
+
+# variable "peer_a" {
+#   description = "provider for aplha vpc"
+#   type        = string
+# }
+
+# variable "peer_b" {
+#   description = "provider for bravo vpc"
+#   type        = string
+# }
+
+
 variable "vpc_name_a" {
   description = "name of vpc alpha"
   type        = string
