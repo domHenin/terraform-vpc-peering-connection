@@ -6,6 +6,11 @@
 # VPC ALPHA: 10.0.0.0/16 :- cidr: 10.0.0.4/32
 # VPC BRAVO: 172.31.0.0/16 :- cidr: 172.31.0.8/32ss
 
+variable "peer_a" {
+  description = "provider for aplha vpc"
+  type        = string
+}
+
 variable "vpc_name_a" {
   description = "name of vpc alpha"
   type        = string
@@ -107,6 +112,12 @@ variable "sg_tag_a" {
 }
 
 # ------------------------------------
+
+variable "peer_b" {
+  description = "provider for bravo vpc"
+  type        = string
+}
+
 
 variable "priv_sub_cidr_b" {
   description = "private subnet cidr range bravo"
